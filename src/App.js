@@ -14,7 +14,6 @@ class App extends React.Component {
       { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
     ],
 
-    // contact: null,
     filter: "",
   };
 
@@ -25,13 +24,14 @@ class App extends React.Component {
       name: e.name,
       number: e.number,
     };
+
     const knownContact = this.state.contacts.find(contact => { return contact.name === obj.name })
 
     if (knownContact) { return alert(`Sorry, contact ${obj.name} already existing`) }
     else {
-      this.setState({ contact: obj });
-      this.setState((prevState) => {
+      // this.setState({ contact: obj });
 
+      this.setState((prevState) => {
         return { contacts: [...prevState.contacts, obj] };
       });
 
